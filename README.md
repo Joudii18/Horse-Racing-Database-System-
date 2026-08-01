@@ -1,4 +1,5 @@
 # 🐎 Horse Racing Database System
+<img src="images/horse-riding.png" width="200" />
 
 ## 📚 Course Information
 - **Course:** ICS321 – Database Systems  

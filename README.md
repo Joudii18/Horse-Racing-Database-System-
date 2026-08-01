@@ -42,7 +42,37 @@ It manages and explores data about **horses, stables, owners, trainers, and race
 ---
 
 ## 🧠 Database Schema
+### Main Tables
+- Stable(stableId, stableName, location, colors)
+- Horse(horseId, horseName, age, gender, registration, stableId)
+- Owner(ownerId, lname, fname)
+- Owns(ownerId, horseId)
+- Trainer(trainerId, lname, fname, stableId)
+- Race(raceId, raceName, trackName, raceDate, raceTime)
+- RaceResults(raceId, horseId, results, prize)
+- Track(trackName, location, length)
+  
+### Constraints & Relationships
+- Each horse belongs to one stable.
+- A horse can have multiple owners (many-to-many via Owns).
+- Each trainer belongs to one stable.
+- A race takes place on a track and can include multiple horses.
+- Owners may own multiple horses across multiple stables.
 
-### 🗄 Main Tables
+## ⚙️ Implementation Details
+#### 🧱 Backend
+- Database: MySQL
+- Procedural SQL:
+- Stored Procedure → Deletes an owner and all related information.
+- Trigger → Copies deleted horse info into an old_info table.
+  
+### 💻 Frontend
+- Language: Python
+- Framework: Streamlit
+Libraries Used:
+- streamlit → User interface
+- mysql-connector-python → Database connection
+- pandas → Data handling and display
+
 
 
